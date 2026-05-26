@@ -1,6 +1,6 @@
 # mvp-launch
 
-MVP launch starter built with Next.js for Cloudflare Pages.
+MVP launch starter built with Next.js for Cloudflare Workers Static Assets.
 
 ## Local Development
 
@@ -10,22 +10,21 @@ npm run dev
 
 Open http://localhost:3000.
 
-## Cloudflare Pages Settings
+## Cloudflare Settings
 
-Use these settings when connecting the GitHub repository to Cloudflare Pages.
+Use these settings when connecting the GitHub repository to Cloudflare.
 
 ```text
-Framework preset: Next.js
 Build command: npm run build
-Build output directory: out
+Deploy command: npx wrangler deploy
 ```
 
 ## Stack
 
 ```text
 Frontend: Next.js
-Hosting: Cloudflare Pages
-Backend: Cloudflare Pages Functions
+Hosting: Cloudflare Workers Static Assets
+Backend: Cloudflare Workers
 Database/Auth/Storage: Supabase
 Analytics: PostHog
 Payment: Toss Payments link or manual transfer

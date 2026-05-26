@@ -4,6 +4,8 @@ MVP launch starter built with Next.js for Cloudflare Workers Static Assets.
 
 ## Local Development
 
+Create `.env.local` from `.env.example`, then fill in the Supabase values.
+
 ```bash
 npm run dev
 ```

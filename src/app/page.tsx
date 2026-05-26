@@ -61,7 +61,7 @@ export default function Home() {
 
     setForm(initialFormState);
     setStatus("success");
-    setMessage("Thanks. We will contact you soon.");
+    setMessage("곧 만나뵙겠습니다.");
   }
 
   return (
@@ -72,11 +72,11 @@ export default function Home() {
             MVP launch
           </p>
           <h1 className="mt-4 max-w-xl text-4xl font-semibold tracking-tight sm:text-5xl">
-            Submit your problem. We will respond directly.
+            AI로 업무를 더 효율적으로 하고 싶으신가요?
           </h1>
           <p className="mt-6 max-w-xl text-lg leading-8 text-zinc-600">
-            This first version only collects real demand. Leave your contact
-            and the problem you want solved.
+            직장인, 학생, 주부, 매장을 운영하는 사장님까지, 연락처와
+            가지고 있는 문제를 알려주세요. 제가 곧 피드백 드리겠습니다.
           </p>
         </div>
 
@@ -85,19 +85,19 @@ export default function Home() {
           className="w-full max-w-md rounded-lg border border-zinc-200 bg-white p-6 shadow-sm"
         >
           <label className="block text-sm font-medium text-zinc-800">
-            Name
+            이름
             <input
               className="mt-2 h-11 w-full rounded-md border border-zinc-300 px-3 outline-none transition focus:border-zinc-950"
               value={form.name}
               onChange={(event) =>
                 setForm((current) => ({ ...current, name: event.target.value }))
               }
-              placeholder="Optional"
+              placeholder="선택 입력"
             />
           </label>
 
           <label className="mt-5 block text-sm font-medium text-zinc-800">
-            Contact
+            연락처
             <input
               className="mt-2 h-11 w-full rounded-md border border-zinc-300 px-3 outline-none transition focus:border-zinc-950"
               value={form.contact}
@@ -107,13 +107,13 @@ export default function Home() {
                   contact: event.target.value,
                 }))
               }
-              placeholder="Email, phone, or KakaoTalk ID"
+              placeholder="이메일, 전화번호, 카카오톡 ID"
               required
             />
           </label>
 
           <label className="mt-5 block text-sm font-medium text-zinc-800">
-            Problem
+            가지고 있는 문제
             <textarea
               className="mt-2 min-h-32 w-full resize-y rounded-md border border-zinc-300 px-3 py-3 outline-none transition focus:border-zinc-950"
               value={form.problem}
@@ -123,7 +123,7 @@ export default function Home() {
                   problem: event.target.value,
                 }))
               }
-              placeholder="What should this product solve for you?"
+              placeholder="AI로 더 효율적으로 만들고 싶은 업무나 고민을 적어주세요."
               required
             />
           </label>
@@ -132,7 +132,7 @@ export default function Home() {
             className="mt-6 h-11 w-full rounded-md bg-zinc-950 px-4 text-sm font-semibold text-white transition hover:bg-zinc-800 disabled:cursor-not-allowed disabled:bg-zinc-400"
             disabled={status === "submitting"}
           >
-            {status === "submitting" ? "Submitting..." : "Submit"}
+            {status === "submitting" ? "제출 중..." : "제출하기"}
           </button>
 
           {message ? (

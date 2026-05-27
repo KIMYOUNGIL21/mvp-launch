@@ -1176,7 +1176,15 @@ function openTab(id) {
   sections.forEach((section) => {
     section.classList.toggle("active", section.id === id);
   });
-  window.scrollTo({ top: 0, behavior: "smooth" });
+
+  const layout = document.querySelector(".layout");
+  const layoutTop = layout.getBoundingClientRect().top + window.scrollY - 84;
+  const isLayoutAboveViewport = layout.getBoundingClientRect().top < 72;
+  const isLayoutBelowViewport = layout.getBoundingClientRect().top > window.innerHeight * 0.35;
+
+  if (isLayoutAboveViewport || isLayoutBelowViewport) {
+    window.scrollTo({ top: Math.max(layoutTop, 0), behavior: "smooth" });
+  }
 }
 
 tabs.forEach((button) => {

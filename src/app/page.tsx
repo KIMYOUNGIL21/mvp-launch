@@ -1,6 +1,7 @@
 "use client";
 
 import { FormEvent, useState } from "react";
+import Link from "next/link";
 
 type FormState = {
   name: string;
@@ -108,6 +109,21 @@ export default function Home() {
               가지고 있는 문제를 알려주세요. 제가 곧 피드백 드리겠습니다.
             </p>
 
+            <div className="mt-7 flex flex-col gap-3 sm:flex-row">
+              <Link
+                className="inline-flex h-11 items-center justify-center rounded-md bg-[#171814] px-5 text-sm font-semibold text-white transition hover:bg-[#2d3328]"
+                href="/problem-definition-workshop-v1.html"
+              >
+                문제정의 워크숍 보기
+              </Link>
+              <a
+                className="inline-flex h-11 items-center justify-center rounded-md border border-[#cfd5c4] bg-white px-5 text-sm font-semibold text-[#2d3129] transition hover:border-[#9da88f]"
+                href="#consult"
+              >
+                상담 신청하기
+              </a>
+            </div>
+
             <div className="mt-7 flex flex-wrap gap-2">
               {audience.map((item) => (
                 <span
@@ -135,6 +151,7 @@ export default function Home() {
           </div>
 
           <form
+            id="consult"
             onSubmit={handleSubmit}
             className="rounded-lg border border-[#cfd5c4] bg-white p-5 shadow-[0_18px_50px_rgba(32,40,28,0.10)] sm:p-6"
           >

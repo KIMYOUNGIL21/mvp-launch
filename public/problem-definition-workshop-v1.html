@@ -6,18 +6,23 @@
 <title>문제정의 학습 노트 | 1차 진단과 재정의</title>
 <style>
 :root {
-  --bg: #f7f7f4;
+  --bg: #f5f8fc;
   --surface: #ffffff;
-  --ink: #20242a;
-  --muted: #626973;
-  --soft: #efefea;
-  --line: #ddddd5;
-  --blue: #4b5563;
-  --green: #536b5d;
-  --amber: #7b6a4d;
-  --red: #865a56;
-  --violet: #665f78;
-  --shadow: 0 14px 34px rgba(35, 42, 52, .08);
+  --ink: #172033;
+  --muted: #5f6b7a;
+  --soft: #eef4fb;
+  --line: #d7e1ee;
+  --blue: #2f6fbb;
+  --green: #2f855a;
+  --amber: #9a6a16;
+  --red: #b54747;
+  --violet: #7257b8;
+  --blue-soft: #eaf3ff;
+  --green-soft: #edf8f1;
+  --amber-soft: #fff4cf;
+  --rose-soft: #fff0f0;
+  --violet-soft: #f3efff;
+  --shadow: 0 18px 42px rgba(28, 52, 84, .10);
 }
 
 * {
@@ -50,8 +55,8 @@ button {
   position: sticky;
   top: 0;
   z-index: 30;
-  border-bottom: 1px solid rgba(23, 26, 31, .08);
-  background: rgba(247, 247, 244, .92);
+  border-bottom: 1px solid rgba(47, 111, 187, .14);
+  background: rgba(245, 248, 252, .92);
   backdrop-filter: blur(16px);
 }
 
@@ -79,7 +84,7 @@ button {
   display: grid;
   place-items: center;
   color: #fff;
-  background: #2f343b;
+  background: var(--blue);
 }
 
 .mode-switch {
@@ -113,8 +118,8 @@ button {
 .pill-button.active,
 .primary-button {
   color: #fff;
-  border-color: var(--ink);
-  background: var(--ink);
+  border-color: var(--blue);
+  background: var(--blue);
 }
 
 .ghost-button {
@@ -138,7 +143,8 @@ button {
 .hero-copy {
   min-height: 390px;
   border: 1px solid var(--line);
-  background: var(--surface);
+  background:
+    linear-gradient(135deg, #ffffff 0%, #ffffff 42%, var(--blue-soft) 100%);
   box-shadow: var(--shadow);
   border-radius: 8px;
   padding: 36px;
@@ -188,18 +194,28 @@ p {
   color: #303640;
 }
 
+.marker {
+  color: var(--ink);
+  font-weight: 900;
+  background: linear-gradient(transparent 58%, rgba(255, 211, 90, .62) 58%);
+  border-radius: 3px;
+  padding: 0 2px;
+}
+
 .hero-line {
   margin-top: 28px;
-  padding: 18px;
-  border-left: 5px solid var(--blue);
-  background: #f0f1ec;
+  padding: 18px 18px 18px 20px;
+  border-left: 6px solid var(--amber);
+  background: var(--amber-soft);
+  border-radius: 8px;
   font-size: 19px;
   font-weight: 900;
 }
 
 .workshop-map {
   border: 1px solid var(--line);
-  background: var(--surface);
+  background:
+    linear-gradient(180deg, #ffffff 0%, var(--green-soft) 100%);
   color: var(--ink);
   box-shadow: var(--shadow);
   border-radius: 8px;
@@ -211,7 +227,7 @@ p {
 
 .map-title {
   font-weight: 900;
-  color: #444b55;
+  color: var(--green);
 }
 
 .map-track {
@@ -233,7 +249,8 @@ p {
   border-radius: 10px;
   display: grid;
   place-items: center;
-  background: #efefea;
+  color: #fff;
+  background: var(--green);
   font-weight: 900;
 }
 
@@ -257,7 +274,7 @@ p {
   top: 72px;
   border: 1px solid var(--line);
   border-radius: 8px;
-  background: var(--surface);
+  background: #ffffff;
   box-shadow: var(--shadow);
   padding: 12px;
 }
@@ -281,12 +298,12 @@ p {
 
 .tab-button:hover {
   color: var(--ink);
-  background: var(--soft);
+  background: var(--blue-soft);
 }
 
 .tab-button.active {
   color: #fff;
-  background: var(--ink);
+  background: var(--blue);
 }
 
 .tab {
@@ -306,6 +323,43 @@ p {
   margin-bottom: 16px;
 }
 
+.study-highlights {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin-bottom: 16px;
+}
+
+.highlight-card {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: var(--shadow);
+  padding: 18px;
+}
+
+.highlight-card:nth-child(1) {
+  background: var(--blue-soft);
+}
+
+.highlight-card:nth-child(2) {
+  background: var(--green-soft);
+}
+
+.highlight-card:nth-child(3) {
+  background: var(--amber-soft);
+}
+
+.highlight-card strong {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--ink);
+}
+
+.highlight-card p {
+  color: #405062;
+}
+
 .panel-header {
   display: flex;
   gap: 14px;
@@ -322,20 +376,20 @@ p {
   height: 36px;
   border-radius: 10px;
   color: #fff;
-  background: var(--ink);
+  background: var(--blue);
   font-weight: 950;
 }
 
 .mission {
-  border: 1px solid var(--line);
+  border: 1px solid #d8c583;
   border-radius: 8px;
   padding: 18px;
-  background: #f3f3ef;
+  background: var(--amber-soft);
 }
 
 .mission strong {
   display: block;
-  color: var(--blue);
+  color: var(--amber);
   margin-bottom: 6px;
 }
 
@@ -351,7 +405,19 @@ p {
   border: 1px solid var(--line);
   border-radius: 8px;
   padding: 18px;
-  background: #fbfcf7;
+  background: #fbfdff;
+}
+
+.tile:nth-child(3n + 1) {
+  background: var(--blue-soft);
+}
+
+.tile:nth-child(3n + 2) {
+  background: var(--green-soft);
+}
+
+.tile:nth-child(3n) {
+  background: var(--violet-soft);
 }
 
 .tile.half {
@@ -379,7 +445,7 @@ p {
   min-height: 32px;
   padding: 4px 10px;
   border-radius: 999px;
-  background: #f0f3eb;
+  background: var(--blue-soft);
   color: #303640;
   border: 1px solid var(--line);
   font-weight: 800;
@@ -387,27 +453,27 @@ p {
 }
 
 .tag.blue {
-  background: #f1f2ee;
-  border-color: var(--line);
-  color: #3f4651;
+  background: var(--blue-soft);
+  border-color: #c7dbf2;
+  color: var(--blue);
 }
 
 .tag.green {
-  background: #eef2ec;
-  border-color: #d7ddd2;
-  color: #405245;
+  background: var(--green-soft);
+  border-color: #cde7d4;
+  color: var(--green);
 }
 
 .tag.amber {
-  background: #f4f1e9;
-  border-color: #ded6c6;
-  color: #625743;
+  background: var(--amber-soft);
+  border-color: #ead48b;
+  color: var(--amber);
 }
 
 .tag.red {
-  background: #f5eeee;
-  border-color: #ded0ce;
-  color: #6f4f4c;
+  background: var(--rose-soft);
+  border-color: #f0caca;
+  color: var(--red);
 }
 
 .check-list {
@@ -424,7 +490,7 @@ p {
   border: 1px solid var(--line);
   border-radius: 8px;
   padding: 14px;
-  background: #fbfcf7;
+  background: #ffffff;
   cursor: pointer;
 }
 
@@ -438,7 +504,7 @@ p {
   border: 1px solid var(--line);
   border-radius: 8px;
   padding: 18px;
-  background: #f3f3ef;
+  background: var(--blue-soft);
   color: var(--ink);
   min-height: 92px;
 }
@@ -451,13 +517,13 @@ p {
   border: 1px solid var(--line);
   border-radius: 8px;
   padding: 16px;
-  background: #fbfcf7;
+  background: #ffffff;
 }
 
 .quiz-card blockquote {
   margin: 0 0 12px;
   padding: 0 0 0 14px;
-  border-left: 4px solid #8b806b;
+  border-left: 4px solid var(--violet);
   font-weight: 900;
   color: #252a32;
 }
@@ -479,15 +545,15 @@ p {
 }
 
 .choice-button.correct {
-  border-color: #80907f;
-  background: #eef2ec;
-  color: #405245;
+  border-color: #8fcfa4;
+  background: var(--green-soft);
+  color: var(--green);
 }
 
 .choice-button.wrong {
-  border-color: #a58c88;
-  background: #f5eeee;
-  color: #6f4f4c;
+  border-color: #e5a8a8;
+  background: var(--rose-soft);
+  color: var(--red);
 }
 
 .feedback {
@@ -509,20 +575,20 @@ p {
   border-radius: 8px;
   padding: 12px;
   cursor: pointer;
-  background: #fbfcf7;
+  background: #ffffff;
   font-weight: 900;
 }
 
 .scenario-button.active {
   color: #fff;
-  border-color: var(--ink);
-  background: var(--ink);
+  border-color: var(--green);
+  background: var(--green);
 }
 
 .case-board {
   border: 1px solid var(--line);
   border-radius: 8px;
-  background: #fbfcf7;
+  background: var(--blue-soft);
   padding: 20px;
 }
 
@@ -545,22 +611,22 @@ p {
 }
 
 .bad-box {
-  border: 1px solid #ded0ce;
-  background: #f7f2f1;
+  border: 1px solid #f0caca;
+  background: var(--rose-soft);
 }
 
 .good-box {
-  border: 1px solid #d7ddd2;
-  background: #f1f4ef;
+  border: 1px solid #cde7d4;
+  background: var(--green-soft);
 }
 
 .formula {
   white-space: pre-wrap;
-  border: 1px dashed #aeb6c3;
+  border: 1px dashed #8fb1d9;
   border-radius: 8px;
-  background: #f5f5f1;
+  background: #ffffff;
   padding: 16px;
-  color: #303640;
+  color: var(--blue);
   font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
   overflow: auto;
 }
@@ -592,23 +658,23 @@ textarea {
   border-radius: 8px;
   padding: 13px;
   color: var(--ink);
-  background: #fbfcf7;
+  background: #fbfdff;
 }
 
 textarea:focus,
 input:focus,
 button:focus-visible {
-  outline: 3px solid rgba(75, 85, 99, .24);
+  outline: 3px solid rgba(47, 111, 187, .24);
   outline-offset: 2px;
 }
 
 .brief {
   min-height: 260px;
   white-space: pre-wrap;
-  border: 1px solid #bfc7d4;
+  border: 1px solid #b9d0ec;
   border-radius: 8px;
-  background: #f6f6f2;
-  color: #2f343b;
+  background: #ffffff;
+  color: var(--ink);
   padding: 18px;
   font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
 }
@@ -629,18 +695,18 @@ button:focus-visible {
 }
 
 .rubric th {
-  background: #efefea;
+  background: var(--blue-soft);
   color: var(--ink);
 }
 
 .rubric td {
   color: #3f4651;
-  background: #fbfcf7;
+  background: #ffffff;
 }
 
 .facilitator {
-  border-left: 5px solid #777181;
-  background: #f1f0ec;
+  border-left: 5px solid var(--violet);
+  background: var(--violet-soft);
   padding: 16px;
   border-radius: 8px;
 }
@@ -672,6 +738,10 @@ button:focus-visible {
 
   .scenario-picker {
     grid-template-columns: 1fr 1fr;
+  }
+
+  .study-highlights {
+    grid-template-columns: 1fr;
   }
 
   h1 {
@@ -767,9 +837,9 @@ button:focus-visible {
       <div>
         <div class="eyebrow">Problem Definition Study Note</div>
         <h1>문제를 더 정확하게 바라보는 연습.</h1>
-        <p class="lead">이 자료는 문제정의를 차근차근 다시 공부하기 위한 노트입니다. 증상, 원인, 문제, 해결책을 구분하고, 실제 업무 사례를 더 작은 단위로 나누어 실행 가능한 문장으로 바꾸는 흐름을 담았습니다.</p>
+        <p class="lead">이 자료는 문제정의를 차근차근 다시 공부하기 위한 노트입니다. <span class="marker">증상, 원인, 문제, 해결책을 구분</span>하고, 실제 업무 사례를 더 작은 단위로 나누어 실행 가능한 문장으로 바꾸는 흐름을 담았습니다.</p>
       </div>
-      <div class="hero-line">문제정의는 답을 늦게 내기 위한 과정이 아니라, 덜 헤매기 위한 준비입니다.</div>
+      <div class="hero-line"><span class="marker">문제정의는 답을 늦게 내기 위한 과정이 아니라, 덜 헤매기 위한 준비</span>입니다.</div>
     </div>
     <aside class="workshop-map" aria-label="학습 흐름">
       <div>
@@ -784,6 +854,21 @@ button:focus-visible {
       <p>혼자 읽어도 흐름이 잡히고, 필요하면 짧은 스터디 자료로도 쓸 수 있게 구성했습니다.</p>
     </aside>
   </header>
+
+  <section class="study-highlights" aria-label="핵심 요약">
+    <article class="highlight-card">
+      <strong>1. 해결책부터 말하지 않기</strong>
+      <p><span class="marker">광고, AI, 리뉴얼 같은 처방은 잠시 보류</span>하고 지금 보이는 현상을 먼저 적습니다.</p>
+    </article>
+    <article class="highlight-card">
+      <strong>2. 네 가지를 나눠보기</strong>
+      <p><span class="marker">증상, 원인, 문제, 해결책</span>을 구분하면 생각이 덜 엉킵니다.</p>
+    </article>
+    <article class="highlight-card">
+      <strong>3. 마지막은 실험으로 끝내기</strong>
+      <p>좋은 문제정의는 멋진 문장이 아니라 <span class="marker">다음에 무엇을 확인할지 보이는 문장</span>입니다.</p>
+    </article>
+  </section>
 
   <div class="layout">
     <nav class="side-nav" aria-label="학습 탭">
@@ -808,7 +893,7 @@ button:focus-visible {
           </div>
           <div class="mission">
             <strong>연습.</strong>
-            최근에 열심히 했지만 결과가 애매했던 일을 하나 떠올리고 체크해보세요.
+            <span class="marker">최근에 열심히 했지만 결과가 애매했던 일</span>을 하나 떠올리고 체크해보세요.
           </div>
           <div class="check-list" id="diagnosisList">
             <label class="check-item"><input type="checkbox" value="1" /> 업무를 판단할 때 원인보다 해결책이 먼저 나온다.</label>
@@ -827,15 +912,15 @@ button:focus-visible {
           <div class="grid">
             <div class="tile">
               <h3>학습 포인트 1</h3>
-              <p>문제정의에서는 해결책을 조금 늦게 꺼냅니다. 광고, 페이지, AI 같은 처방은 먼저 떠오르지만 잠시 보류합니다.</p>
+              <p>문제정의에서는 <span class="marker">해결책을 조금 늦게 꺼냅니다.</span> 광고, 페이지, AI 같은 처방은 먼저 떠오르지만 잠시 보류합니다.</p>
             </div>
             <div class="tile">
               <h3>학습 포인트 2</h3>
-              <p>문제정의는 책임자를 찾는 과정이 아닙니다. 지금 확인할 수 있는 가설을 더 선명하게 만드는 과정입니다.</p>
+              <p>문제정의는 책임자를 찾는 과정이 아닙니다. <span class="marker">지금 확인할 수 있는 가설을 더 선명하게 만드는 과정</span>입니다.</p>
             </div>
             <div class="tile">
               <h3>학습 포인트 3</h3>
-              <p>데이터가 부족해도 시작할 수 있습니다. 숫자가 없으면 고객 행동, CS, 반복 불만, 업무가 멈추는 지점을 관찰합니다.</p>
+              <p>데이터가 부족해도 시작할 수 있습니다. 숫자가 없으면 <span class="marker">고객 행동, CS, 반복 불만, 업무가 멈추는 지점</span>을 관찰합니다.</p>
             </div>
           </div>
         </div>
@@ -851,7 +936,7 @@ button:focus-visible {
           </div>
           <div class="mission">
             <strong>연습.</strong>
-            아래 문장이 무엇인지 골라보세요. 현업에서는 이 네 가지가 자주 섞이기 때문에, 구분하는 것만으로도 사고가 정리됩니다.
+            아래 문장이 무엇인지 골라보세요. 현업에서는 이 네 가지가 자주 섞이기 때문에, <span class="marker">구분하는 것만으로도 사고가 정리</span>됩니다.
           </div>
         </div>
 
@@ -887,7 +972,7 @@ button:focus-visible {
           </div>
           <div class="mission">
             <strong>연습.</strong>
-            가장 가까운 사례를 고른 뒤, 내 업무에서는 어느 단계가 막히는지 비교해보세요.
+            가장 가까운 사례를 고른 뒤, <span class="marker">내 업무에서는 어느 단계가 막히는지</span> 비교해보세요.
           </div>
           <div class="scenario-picker" id="scenarioPicker"></div>
           <div class="case-board" id="caseBoard"></div>
@@ -926,7 +1011,7 @@ button:focus-visible {
           </div>
           <div class="mission">
             <strong>연습.</strong>
-            내 문제의 원인 가설을 최소 3개 적어보세요. 하나의 원인만 믿으면 해결책도 좁아집니다.
+            내 문제의 원인 가설을 <span class="marker">최소 3개</span> 적어보세요. 하나의 원인만 믿으면 해결책도 좁아집니다.
           </div>
           <div class="work-grid">
             <div class="field">
@@ -991,7 +1076,7 @@ button:focus-visible {
           </div>
           <div class="mission">
             <strong>연습.</strong>
-            문제정의 문장을 만든 뒤, 가장 작게 확인할 실험 하나와 성공 지표 하나를 정리하세요.
+            문제정의 문장을 만든 뒤, <span class="marker">가장 작게 확인할 실험 하나와 성공 지표 하나</span>를 정리하세요.
           </div>
           <div class="work-grid">
             <div class="field">
@@ -1068,7 +1153,7 @@ button:focus-visible {
         <div class="panel">
           <div class="facilitator">
             <h3>공부할 때 기억할 점</h3>
-            <p>문제정의는 사람을 지목하는 과정이 아닙니다. 지금 가진 관찰을 바탕으로 검증 가능한 가설을 만드는 과정입니다. 그래서 좋은 문제정의는 누가 틀렸는지가 아니라, 다음에 무엇을 확인할지가 보이게 합니다.</p>
+            <p>문제정의는 사람을 지목하는 과정이 아닙니다. 지금 가진 관찰을 바탕으로 검증 가능한 가설을 만드는 과정입니다. 그래서 좋은 문제정의는 누가 틀렸는지가 아니라, <span class="marker">다음에 무엇을 확인할지가 보이게</span> 합니다.</p>
           </div>
         </div>
       </section>

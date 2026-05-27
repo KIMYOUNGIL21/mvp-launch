@@ -95,6 +95,28 @@ button {
   justify-content: flex-end;
 }
 
+.home-link {
+  min-height: 42px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #c7dbf2;
+  border-radius: 999px;
+  background: var(--blue-soft);
+  color: var(--blue);
+  font-weight: 900;
+  padding: 8px 14px;
+  text-decoration: none;
+  transition: transform .16s ease, box-shadow .16s ease, border-color .16s ease, background .16s ease;
+}
+
+.home-link:hover {
+  transform: translateY(-1px);
+  border-color: #91b8e4;
+  background: #ffffff;
+  box-shadow: 0 10px 28px rgba(35, 42, 52, .12);
+}
+
 .pill-button,
 .ghost-button,
 .primary-button {
@@ -824,6 +846,7 @@ button:focus-visible {
       <span>문제정의 학습 노트</span>
     </div>
     <div class="mode-switch" aria-label="학습 모드 선택">
+      <a class="home-link" href="/">메인으로</a>
       <button class="pill-button active" data-mode="15">빠른 복습</button>
       <button class="pill-button" data-mode="60">깊이 공부</button>
       <button class="ghost-button" type="button" onclick="window.print()">PDF</button>
